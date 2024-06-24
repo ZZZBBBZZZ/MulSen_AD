@@ -4,7 +4,7 @@
     <title>MulSen_AD Dataset</title>
     <meta charset="utf-8"/>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/css.css">
@@ -159,8 +159,8 @@
     <div class="h5 text-center" style="margin-bottom: 30px">Tip: The anomaly location can be displayed by clicking on the image</div>
   <div class="slider_box" id="slider_name" data-interval="2000">
     <div class="silder_tip" id="movie_tip"></div>
-    <ul class="silder_con">
-      <li class="silder_panel clearfix" v-for="(item,index) in imglist">
+    <ul class="silder_con" data-interval="2000">
+      <li class="silder_panel clearfix" v-for="(item,index) in imglist" data-interval="2000">
           <img :src="item" @click="changeImageSrc(index)"/>
       </li>
     </ul>
