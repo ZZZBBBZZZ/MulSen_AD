@@ -1,11 +1,11 @@
 /*slider*/
 #slider{width:100%;background-color: #ffffff; padding-top:8px;margin-top: 50px;}
-.slider_box{width:1100px; margin:0 auto;height: 670px;overflow: hidden;position: relative;}
+.slider_box{width:1100px; margin:0 auto;height: 605px;overflow: hidden;position: relative;}
 .silder_tip{width: 92px;height: 92px;overflow: hidden;position: absolute;top: 0;right: 0;z-index:1; text-indent:-999px;background:url(../images/tip-tt.gif) no-repeat;}
 #movie_tip{background-position: -93px 0;}
 .silder_con{height:600px;overflow: hidden;position: absolute;}
-.silder_panel{width:1100px;height:600px;overflow: hidden;float: left;position: relative;background: #ffffff;}
-.silder_panel img{width: 1100px;height: 600px;display: block;overflow: hidden;}
+.silder_panel{width:1100px;height:520px;overflow: hidden;float: left;position: relative;background: #ffffff;}
+.silder_panel img{width: 1100px;height: 520px;display: block;overflow: hidden;}
 .silder_intro{width: 210px;height: 270px;line-height: 20px;overflow: hidden;color: #999;padding: 0 40px 0 0;}
 .silder_intro h3{padding:10px 0;height:50px;color:#7acf39;line-height: 30px;overflow: hidden;}
 .silder_intro h3 strong{font-family: "����";font-size: 24px;height:30px;overflow: hidden;font-weight: normal;display: block;}

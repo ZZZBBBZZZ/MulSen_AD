@@ -9,7 +9,7 @@
     <link href="css/agency.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/css.css">
     <link rel="stylesheet" type="text/css" href="css/slider.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
   <style>
     .carousel-inner > .item > img {
@@ -56,6 +56,25 @@
 		overflow: hidden;
 
 	}
+    .button-container {
+        padding-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .button-container a {
+        display: inline-block;
+        padding: 10px 25px;
+        font-size: 15px;
+        color: #fff;
+        background-color: #343a40;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+    .button-container a:hover {
+        background-color: #495057;
+    }
     .highlight {
         font-weight: bold; /* 设置文字为粗体 */
     }
@@ -63,8 +82,15 @@
     body {
     font-family: 'Poppins', sans-serif;
     }
+
+
   </style>
 </head>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.slides.js" type="text/javascript"></script>
+<script src="js/vue.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
 <body id="page-top" class="index" data-spy="scroll" data-target="#selector">
 
@@ -105,7 +131,7 @@
                 MulSen-AD Dataset
             </div>
             <div class="intro-lead-in">A MULTI-SENSOR DATASET FOR ANOMALY DETECTION</div>
-            
+
             <a href="#Paper" class="page-scroll btn btn-xl">READ MORE</a>
         </div>
     </div>
@@ -113,50 +139,40 @@
 
 
 <div id="Paper" class="container" style="padding-top: 100px;">
-    <div class="h1 text-center" style="padding-bottom: 30px; font-weight: bold;">PAPER</div>
-    <div class="h2">MulSen-AD: A Dataset and Benchmark for Multi-Sensor Anomaly Detection</div>
-    <div class="h5" style="margin-top: 20px; font-weight: bold;">Wenqiao Li*, Bozhong Zheng*, Jinye Gan, Fading Lu, Xiang Li, Xiaohao Xu, Na Ni, Zheng Tian, Shenghua Gao, Yingna Wu</div>
-    <div class="h5" >ShanghaiTech University ,University of Michigan, Ann Arbor</div>
-    <div style="margin-bottom: 20px;">* Equal contribution</div>
+    <div class="h1 text-center" style="padding-bottom: 8px;font-weight: bold;">PAPER</div>
+
+    <div class="container text-center mt-5">
+        <div class="button-container">
+            <a href="https://huggingface.co/datasets/orgjy314159/MulSen_AD/tree/main" >
+                <img src="./icons/huggingface.png" alt="Hugging Face" style="width: 25px; height: 25px;margin-right: 8px; "> Data
+            </a>
+            <a href="https://github.com/ZZZBBBZZZ/MulSen-AD">
+                <img src="./icons/github.png" style="width: 25px; height: 25px;margin-right: 8px; "></i>   Code
+            </a>
+            <a href="#" style="background-color: #737373;">
+                <img src="./icons/Arxiv.png" alt="arXiv" style="width: 25px; height: 25px;margin-right: 8px;">   Paper
+            </a>
+        </div>
+    </div>
+    
+    <div class="h2 text-center">MulSen-AD: A Dataset and Benchmark for Multi-Sensor Anomaly Detection</div>
+    <div class="h5 text-center" style="margin-top: 20px; font-weight: bold;">Wenqiao Li, Bozhong Zheng, Jinye Gan, Fading Lu, Xiang Li, Xiaohao Xu, Na Ni, Zheng Tian, Shenghua Gao, Yingna Wu</div>
+    <div class="h5 text-center" style="margin-bottom: 20px;">ShanghaiTech University ,University of Michigan, Ann Arbor</div>
+
     <p style="font-size: 16px;">Object anomaly detection is an important problem in industrial quality inspection. Although remarkable progress has been made in object-level anomaly detection for data captured by a single type of sensor, two critical problems still hinder the deployment of the algorithms. First, in  practical industrial environments, anomalies are often long-tailed and complex, making it inherently difficult for a single type of sensor to detect certain types of defects. For instance, color defects are invisible in 3D laser scanner, while subtle texture defects are also difficult to detect by infrared thermography sensor. Second, environment conditions, such as ambient lighting in factories, often greatly affect the detection process, leading to unreliable or invalid results under a single type of sensor. To address these issues, we propose the first Multi-Sensor Anomaly Detection (Mulsen-AD) dataset and develop a comprehensive benchmark (Mulsen-AD Bench) on Mulsen-AD dataset. Specifically,  we build Mulsen-AD dataset with high-resolution industrial camera, high-precision laser scanner and lock-in infrared thermography. To exactly replicate real industrial scenarios, Mulsen-AD dataset is comprised of 15 types of distinct and authentic industrial products, featuring a variety of defects that require detection through the integration of multiple sensors. Additionally, we propose Mulsen-TripleAD algorithm, a decision level gating method, to solve the problem of object anomaly detection with the combination of three sensors. In our benchmark, our method achieved 81.1% object-level AUROC detection accuracy using three sensors, significantly outperforming single-sensor methods, demonstrating the potential value of multi-sensor datasets for the research community.
     </p>
-    <p style="font-size: 16px;" >
-        The data and code(<a href="https://github.com/ZZZBBBZZZ/MulSen-AD" class="text-info">https://github.com/ZZZBBBZZZ/MulSen-AD</a>) are released openly to support the development of the multi-sensor anomaly detectio.
-    </p>
+
+<!--    <p>-->
+<!--        The data and code(<a href="https://github.com/ZZZBBBZZZ/MulSen-AD" class="text-info">https://github.com/ZZZBBBZZZ/MulSen-AD</a>) are released openly to support the development of the multi-sensor anomaly detectio.-->
+<!--    </p>-->
 
 </div>
 
-<div id="Dataset" class="container" style="padding-top: 100px; display:block;">
-<!--    <div v-for="(image, index) in images" :key="index" class="box-list">-->
-<!--        <div style="display:block; width: 100%">-->
-<!--            <div class="h4 left">{{ image.title }}</div>-->
-<!--            <img class="img-rounded img-responsive" :src="image.url" :alt="image.title">-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="h1 text-center" style="font-weight: bold;">THE DATASET</div>
-    <div class="h2 text-center" >Fifteen Object Classes</div>
-    <div class="slider_box" style="margin-top: 30px">
-        <img :src="images[class_id]" style="width: 100%;">
-   </div>
-</div>
-
-
-<div class="container" style="padding-top: 50px; display:block;">
-<!--    <div v-for="(image, index) in images" :key="index" class="box-list">-->
-<!--        <div style="display:block; width: 100%">-->
-<!--            <div class="h4 left">{{ image.title }}</div>-->
-<!--            <img class="img-rounded img-responsive" :src="image.url" :alt="image.title">-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="h2 text-center" style="font-weight: bold;">Multi-Senor</div>
-    <div style="margin-top: 30px; height: 1000px; text-align: center">
-        <img src="data_acquisition/data_acquisition.png" style="height: 100%;">
-   </div>
-</div>
-
-<div id="slider">
-    <div class="h2 text-center" style="margin-bottom: 30px;padding-top: 50px;  font-weight: bold;" > NORMAL AND ABNORMAL SAMPLES</div>
-    <div class="h5 text-center" style="margin-bottom: 30px">Tip: The anomaly location can be displayed by clicking on the image</div>
+<div id="Dataset" class="container" style="padding-top: 50px; display:block;">
+    <div class="h1 text-center"  style="font-weight: bold;">The Dataset</div>
+    <div id="slider">
+    <div class="h2 text-center" style="margin-bottom: 30px; font-weight: bold;">NORMAL AND ABNORMAL SAMPLES</div>
+    <!-- <div class="h5 text-center" style="margin-bottom: 30px">Tip: The anomaly location can be displayed by clicking on the image</div> -->
   <div class="slider_box" id="slider_name">
     <div class="silder_tip" id="movie_tip"></div>
     <ul class="silder_con">
@@ -174,9 +190,38 @@
   </div>
   <div class="silderBox"></div>
 </div>
+</div>
+
+
+<div class="container" style="padding-top: 50px; display:block;">
+<!--    <div v-for="(image, index) in images" :key="index" class="box-list">-->
+<!--        <div style="display:block; width: 100%">-->
+<!--            <div class="h4 left">{{ image.title }}</div>-->
+<!--            <img class="img-rounded img-responsive" :src="image.url" :alt="image.title">-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="h2 text-center"  style="font-weight: bold;">Collection Pipeline</div>
+    <div style="margin-top: 30px; height: 650px; text-align: center">
+        <img src="data_acquisition/data_acquisition.png" style="height: 100%;">
+   </div>
+</div>
+
+
+<div id="calssify" class="container" style="padding-top: 100px; display:block;">
+<!--    <div v-for="(image, index) in images" :key="index" class="box-list">-->
+<!--        <div style="display:block; width: 100%">-->
+<!--            <div class="h4 left">{{ image.title }}</div>-->
+<!--            <img class="img-rounded img-responsive" :src="image.url" :alt="image.title">-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="h2 text-center" style="font-weight: bold;" >Fifteen Object Classes</div>
+    <div class="slider_box" style="margin-top: 30px">
+        <img :src="images[class_id]" style="width: 100%;">
+   </div>
+</div>
 
 <div class="container my-4" id="Table" style="padding-top: 100px">
-    <h4 class="text-center h3"  style="font-weight: bold;">MulsenAD Bench on Mulsen AD dataset(object-level AUROC)</h4>
+    <h4 class="text-center h3" style="font-weight: bold;">MulsenAD Bench on Mulsen AD dataset(object-level AUROC)</h4>
 <!--    <p class="text-center">The score indicates object-level AUROC &uarr;. PC means Point cloud. The best result of each category is highlighted in bold.</p>-->
     <div class="table-responsive">
         <table class="table h5">
@@ -362,465 +407,17 @@
     </div>
 </div>
 
-<div class="container my-4">
-    <h2 class="text-center h3"  style="font-weight: bold;">SingeBench-3D for MulSen-AD dataset(object-level AUROC)</h2>
-<!--    <p class="text-center">The score indicates object-level AUROC &uarr;. The best result of each category is highlighted in bold.</p>-->
-    <div class="table-responsive">
-        <table class="table h5">
-            <thead class="thead-dark">
-                <tr>
-                    <th rowspan="2" class="align-middle text-center">Category</th>
-                    <th colspan="2" class="text-center">BTF</th>
-                    <th colspan="2" class="text-center">M3DM</th>
-                    <th colspan="3" class="text-center">PatchCore</th>
-                    <th rowspan="2" class="align-middle text-center">IMRNet</th>
-                    <th rowspan="2" class="align-middle text-center">Reg3D-AD</th>
-                </tr>
-                <tr>
-                    <th class="text-center">Raw</th>
-                    <th class="text-center">FPFH</th>
-                    <th class="text-center">PointMAE</th>
-                    <th class="text-center">PointBERT</th>
-                    <th class="text-center">FPFH</th>
-                    <th class="text-center">FPFH+Raw</th>
-                    <th class="text-center">PointMAE</th>
-                </tr>
-            </thead>
-            <tbody class="text-center">
-                <tr>
-                    <td>Capsule</td>
-                    <td>0.641</td>
-                    <td>0.874</td>
-                    <td>0.773</td>
-                    <td>0.728</td>
-                    <td>0.897</td>
-                    <td class="highlight">0.900</td>
-                    <td>0.871</td>
-                    <td>0.601</td>
-                    <td class="highlight">0.900</td>
-                </tr>
-                <tr>
-                    <td>Cotton</td>
-                    <td class="highlight">0.775</td>
-                    <td>0.320</td>
-                    <td>0.640</td>
-                    <td>0.490</td>
-                    <td>0.360</td>
-                    <td>0.335</td>
-                    <td>0.455</td>
-                    <td>0.585</td>
-                    <td>0.425</td>
-                </tr>
-                <tr>
-                    <td>Cube</td>
-                    <td>0.603</td>
-                    <td>0.655</td>
-                    <td>0.462</td>
-                    <td>0.438</td>
-                    <td class="highlight">0.688</td>
-                    <td>0.657</td>
-                    <td>0.557</td>
-                    <td>0.432</td>
-                    <td>0.449</td>
-                </tr>
-                <tr>
-                    <td>Spring pad</td>
-                    <td>0.764</td>
-                    <td>0.872</td>
-                    <td>0.698</td>
-                    <td>0.517</td>
-                    <td>0.986</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.965</td>
-                    <td>0.651</td>
-                    <td>0.951</td>
-                </tr>
-                <tr>
-                    <td>Screw</td>
-                    <td>0.933</td>
-                    <td>0.698</td>
-                    <td>0.788</td>
-                    <td>0.890</td>
-                    <td class="highlight">1.000</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.705</td>
-                    <td>0.742</td>
-                    <td>0.759</td>
-                </tr>
-                <tr>
-                    <td>Screen</td>
-                    <td>0.584</td>
-                    <td>0.788</td>
-                    <td>0.878</td>
-                    <td>0.947</td>
-                    <td class="highlight">0.950</td>
-                    <td class="highlight">0.950</td>
-                    <td>0.478</td>
-                    <td>0.378</td>
-                    <td>0.546</td>
-                </tr>
-                <tr>
-                    <td>Piggy</td>
-                    <td>0.818</td>
-                    <td>0.831</td>
-                    <td>0.030</td>
-                    <td>0.040</td>
-                    <td class="highlight">1.000</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.702</td>
-                    <td>0.729</td>
-                    <td>0.831</td>
-                </tr>
-                <tr>
-                    <td>Nut</td>
-                    <td>0.789</td>
-                    <td>0.883</td>
-                    <td>0.806</td>
-                    <td>0.783</td>
-                    <td>0.980</td>
-                    <td class="highlight">0.989</td>
-                    <td>0.837</td>
-                    <td>0.812</td>
-                    <td>0.860</td>
-                </tr>
-                <tr>
-                    <td>Flat pad</td>
-                    <td>0.698</td>
-                    <td>0.918</td>
-                    <td>0.882</td>
-                    <td>0.882</td>
-                    <td class="highlight">0.984</td>
-                    <td>0.979</td>
-                    <td>0.969</td>
-                    <td>0.714</td>
-                    <td>0.939</td>
-                </tr>
-                <tr>
-                    <td>Plastic cylinder</td>
-                    <td>0.728</td>
-                    <td>0.493</td>
-                    <td>0.409</td>
-                    <td>0.891</td>
-                    <td class="highlight">0.905</td>
-                    <td>0.692</td>
-                    <td>0.590</td>
-                    <td>0.621</td>
-                    <td>0.720</td>
-                </tr>
-                <tr>
-                    <td>Zipper</td>
-                    <td>0.505</td>
-                    <td>0.662</td>
-                    <td>0.712</td>
-                    <td>0.613</td>
-                    <td class="highlight">0.909</td>
-                    <td>0.871</td>
-                    <td>0.747</td>
-                    <td>0.630</td>
-                    <td>0.695</td>
-                </tr>
-                <tr>
-                    <td>Button cell</td>
-                    <td>0.567</td>
-                    <td>0.500</td>
-                    <td>0.621</td>
-                    <td>0.603</td>
-                    <td class="highlight">0.874</td>
-                    <td>0.754</td>
-                    <td>0.782</td>
-                    <td>0.702</td>
-                    <td>0.715</td>
-                </tr>
-                <tr>
-                    <td>Toothbrush</td>
-                    <td>0.882</td>
-                    <td>0.562</td>
-                    <td>0.816</td>
-                    <td>0.812</td>
-                    <td>0.885</td>
-                    <td class="highlight">0.895</td>
-                    <td>0.822</td>
-                    <td>0.615</td>
-                    <td>0.809</td>
-                </tr>
-                <tr>
-                    <td>Solar panel</td>
-                    <td>0.474</td>
-                    <td>0.531</td>
-                    <td>0.476</td>
-                    <td>0.423</td>
-                    <td>0.569</td>
-                    <td>0.555</td>
-                    <td>0.483</td>
-                    <td>0.344</td>
-                    <td class="highlight">0.586</td>
-                </tr>
-                <tr>
-                    <td>Light</td>
-                    <td>0.903</td>
-                    <td>0.859</td>
-                    <td>0.608</td>
-                    <td>0.512</td>
-                    <td class="highlight">1.000</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.672</td>
-                    <td>0.457</td>
-                    <td>0.697</td>
-                </tr>
-                <tr>
-                    <td class="font-weight-bold">Mean</td>
-                    <td>0.711</td>
-                    <td>0.721</td>
-                    <td>0.646</td>
-                    <td>0.606</td>
-                    <td class="highlight">0.865</td>
-                    <td>0.853</td>
-                    <td>0.716</td>
-                    <td>0.601</td>
-                    <td>0.726</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<div class="container my-4">
-    <h2 class="text-center h3"  style="font-weight: bold;">SingeBench-3D for MulSen-AD dataset(point-level AUROC)</h2>
-<!--    <p class="text-center">The score indicates point-level AUROC &uarr;. The best result of each category is highlighted in bold.</p>-->
-    <div class="table-responsive">
-        <table class="table h5">
-            <thead class="thead-dark">
-                <tr>
-                    <th rowspan="2" class="align-middle text-center">Category</th>
-                    <th colspan="2" class="text-center">BTF</th>
-                    <th colspan="2" class="text-center">M3DM</th>
-                    <th colspan="3" class="text-center">PatchCore</th>
-                    <th rowspan="2" class="align-middle text-center">IMRNet</th>
-                    <th rowspan="2" class="align-middle text-center">Reg3D-AD</th>
-                </tr>
-                <tr>
-                    <th class="text-center">Raw</th>
-                    <th class="text-center">FPFH</th>
-                    <th class="text-center">PointMAE</th>
-                    <th class="text-center">PointBERT</th>
-                    <th class="text-center">FPFH</th>
-                    <th class="text-center">FPFH+Raw</th>
-                    <th class="text-center">PointMAE</th>
-                </tr>
-            </thead>
-            <tbody class="text-center">
-                <tr>
-                    <td>Capsule</td>
-                    <td>0.622</td>
-                    <td>0.783</td>
-                    <td>0.708</td>
-                    <td>0.680</td>
-                    <td class="highlight">0.830</td>
-                    <td>0.793</td>
-                    <td>0.742</td>
-                    <td>0.423</td>
-                    <td>0.781</td>
-                </tr>
-                <tr>
-                    <td>Cotton</td>
-                    <td>0.441</td>
-                    <td>0.472</td>
-                    <td>0.514</td>
-                    <td>0.507</td>
-                    <td class="highlight">0.775</td>
-                    <td>0.548</td>
-                    <td>0.549</td>
-                    <td>0.507</td>
-                    <td>0.522</td>
-                </tr>
-                <tr>
-                    <td>Cube</td>
-                    <td>0.452</td>
-                    <td class="highlight">0.748</td>
-                    <td>0.591</td>
-                    <td>0.584</td>
-                    <td>0.694</td>
-                    <td>0.444</td>
-                    <td>0.598</td>
-                    <td>0.566</td>
-                    <td>0.572</td>
-                </tr>
-                <tr>
-                    <td>Spring pad</td>
-                    <td>0.638</td>
-                    <td class="highlight">0.736</td>
-                    <td>0.594</td>
-                    <td>0.540</td>
-                    <td>0.576</td>
-                    <td>0.607</td>
-                    <td>0.722</td>
-                    <td>0.401</td>
-                    <td>0.721</td>
-                </tr>
-                <tr>
-                    <td>Screw</td>
-                    <td class="highlight">0.540</td>
-                    <td>0.527</td>
-                    <td>0.528</td>
-                    <td>0.504</td>
-                    <td>0.522</td>
-                    <td>0.537</td>
-                    <td>0.514</td>
-                    <td>0.456</td>
-                    <td>0.517</td>
-                </tr>
-                <tr>
-                    <td>Screen</td>
-                    <td>0.492</td>
-                    <td>0.575</td>
-                    <td>0.565</td>
-                    <td>0.553</td>
-                    <td>0.468</td>
-                    <td class="highlight">0.575</td>
-                    <td>0.479</td>
-                    <td>0.352</td>
-                    <td>0.499</td>
-                </tr>
-                <tr>
-                    <td>Piggy</td>
-                    <td>0.707</td>
-                    <td class="highlight">0.799</td>
-                    <td>0.442</td>
-                    <td>0.425</td>
-                    <td>0.722</td>
-                    <td>0.601</td>
-                    <td>0.599</td>
-                    <td>0.512</td>
-                    <td>0.571</td>
-                </tr>
-                <tr>
-                    <td>Nut</td>
-                    <td>0.628</td>
-                    <td class="highlight">0.870</td>
-                    <td>0.675</td>
-                    <td>0.659</td>
-                    <td>0.833</td>
-                    <td>0.816</td>
-                    <td>0.779</td>
-                    <td>0.369</td>
-                    <td>0.785</td>
-                </tr>
-                <tr>
-                    <td>Flat pad</td>
-                    <td>0.591</td>
-                    <td>0.674</td>
-                    <td>0.629</td>
-                    <td>0.598</td>
-                    <td class="highlight">0.675</td>
-                    <td>0.613</td>
-                    <td>0.666</td>
-                    <td>0.542</td>
-                    <td>0.670</td>
-                </tr>
-                <tr>
-                    <td>Plastic cylinder</td>
-                    <td>0.625</td>
-                    <td class="highlight">0.775</td>
-                    <td>0.411</td>
-                    <td>0.391</td>
-                    <td>0.729</td>
-                    <td>0.631</td>
-                    <td>0.588</td>
-                    <td>0.412</td>
-                    <td>0.588</td>
-                </tr>
-                <tr>
-                    <td>Zipper</td>
-                    <td>0.429</td>
-                    <td>0.615</td>
-                    <td>0.523</td>
-                    <td>0.528</td>
-                    <td>0.631</td>
-                    <td class="highlight">0.633</td>
-                    <td>0.499</td>
-                    <td>0.496</td>
-                    <td>0.472</td>
-                </tr>
-                <tr>
-                    <td>Button cell</td>
-                    <td>0.636</td>
-                    <td>0.585</td>
-                    <td>0.752</td>
-                    <td>0.797</td>
-                    <td>0.482</td>
-                    <td>0.523</td>
-                    <td class="highlight">0.686</td>
-                    <td>0.485</td>
-                    <td>0.605</td>
-                </tr>
-                <tr>
-                    <td>Toothbrush</td>
-                    <td>0.429</td>
-                    <td class="highlight">0.611</td>
-                    <td>0.510</td>
-                    <td>0.500</td>
-                    <td>0.571</td>
-                    <td>0.583</td>
-                    <td>0.552</td>
-                    <td>0.519</td>
-                    <td>0.563</td>
-                </tr>
-                <tr>
-                    <td>Solar panel</td>
-                    <td>0.569</td>
-                    <td class="highlight">0.716</td>
-                    <td>0.639</td>
-                    <td>0.615</td>
-                    <td>0.248</td>
-                    <td>0.336</td>
-                    <td>0.702</td>
-                    <td>0.533</td>
-                    <td>0.640</td>
-                </tr>
-                <tr>
-                    <td>Light</td>
-                    <td class="highlight">0.748</td>
-                    <td>0.508</td>
-                    <td>0.606</td>
-                    <td>0.553</td>
-                    <td>0.407</td>
-                    <td>0.356</td>
-                    <td>0.466</td>
-                    <td>0.415</td>
-                    <td>0.445</td>
-                </tr>
-                <tr>
-                    <td class="font-weight-bold">Mean</td>
-                    <td>0.570</td>
-                    <td class="highlight">0.666</td>
-                    <td>0.579</td>
-                    <td>0.562</td>
-                    <td>0.611</td>
-                    <td>0.573</td>
-                    <td>0.609</td>
-                    <td>0.567</td>
-                    <td>0.597</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 <!-- Contact Section -->
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                
+
             </div>
         </div>
     </div>
 </footer>
-<script src="js/jquery-1.10.2.js"></script>
-<script src="js/jquery.slides.js" type="text/javascript"></script>
-<script src="js/jquery-1.12.4.js"></script>
-<script src="js/vue.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+
 <script>
     new Vue({
         el: '#slider',
@@ -831,6 +428,14 @@
             iconlist: ["icons/胶囊.png","icons/cotton.png","icons/piggy-bank.png","icons/battery.png","icons/方板.png",
                 "icons/phone_screen.png","icons/screw.png","icons/solar_panel.png","icons/toothbrush.png","icons/圆环.png",
                 "icons/zipper.png","icons/塑料环.png","icons/U_light.png","icons/环.png","icons/螺母.png"]
+        },
+        beforeMount() {
+            // 在渲染之前修改 items 列表
+             this.imglist = this.imglist.map(img => {
+              const parts = img.split('.');
+              parts[0] = parts[0] + '_b';
+              return parts.join('.');
+            });
         },
         methods: {
             changeImageSrc(id) {
@@ -853,7 +458,7 @@
     });
 
     new Vue({
-        el: '#Dataset',
+        el: '#calssify',
         data:{
              class_id: 0,
              images: [
