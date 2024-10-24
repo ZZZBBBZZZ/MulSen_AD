@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <title>MulSen_AD Dataset</title>
+    <title>MulSen-AD Dataset</title>
     <meta charset="utf-8"/>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,6 +82,7 @@
     body {
     font-family: 'Poppins', sans-serif;
     }
+    
 
 
   </style>
@@ -106,7 +107,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">MulSen_AD Dataset</a>
+            <a class="navbar-brand page-scroll" href="#page-top">MulSen-AD Dataset</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -130,7 +131,7 @@
         <div class="intro-heading">
                 MulSen-AD Dataset
             </div>
-            <div class="intro-lead-in">A MULTI-SENSOR DATASET FOR ANOMALY DETECTION</div>
+            <div class="intro-lead-in">Multi-Sensor Object Anomaly Detection: Unifying Appearance, Geometry, and Internal Properties</div>
 
             <a href="#Paper" class="page-scroll btn btn-xl">READ MORE</a>
         </div>
@@ -157,10 +158,11 @@
     </div>
     
     <div class="h2 text-center">MulSen-AD: A Dataset and Benchmark for Multi-Sensor Anomaly Detection</div>
-    <div class="h5 text-center" style="margin-top: 20px; font-weight: bold;">Wenqiao Li, Bozhong Zheng, Jinye Gan, Fading Lu, Xiang Li, Xiaohao Xu, Na Ni, Zheng Tian, Shenghua Gao, Yingna Wu</div>
-    <div class="h5 text-center" style="margin-bottom: 20px;">ShanghaiTech University ,University of Michigan, Ann Arbor</div>
-
-    <p style="font-size: 16px;">Object anomaly detection is an important problem in industrial quality inspection. Although remarkable progress has been made in object-level anomaly detection for data captured by a single type of sensor, two critical problems still hinder the deployment of the algorithms. First, in  practical industrial environments, anomalies are often long-tailed and complex, making it inherently difficult for a single type of sensor to detect certain types of defects. For instance, color defects are invisible in 3D laser scanner, while subtle texture defects are also difficult to detect by infrared thermography sensor. Second, environment conditions, such as ambient lighting in factories, often greatly affect the detection process, leading to unreliable or invalid results under a single type of sensor. To address these issues, we propose the first Multi-Sensor Anomaly Detection (Mulsen-AD) dataset and develop a comprehensive benchmark (Mulsen-AD Bench) on Mulsen-AD dataset. Specifically,  we build Mulsen-AD dataset with high-resolution industrial camera, high-precision laser scanner and lock-in infrared thermography. To exactly replicate real industrial scenarios, Mulsen-AD dataset is comprised of 15 types of distinct and authentic industrial products, featuring a variety of defects that require detection through the integration of multiple sensors. Additionally, we propose Mulsen-TripleAD algorithm, a decision level gating method, to solve the problem of object anomaly detection with the combination of three sensors. In our benchmark, our method achieved 81.1% object-level AUROC detection accuracy using three sensors, significantly outperforming single-sensor methods, demonstrating the potential value of multi-sensor datasets for the research community.
+    <div class="h5 text-center" style="margin-top: 20px; font-weight: bold;">Wenqiao Li<sup>1*</sup>, Bozhong Zheng<sup>1*</sup>, Xiaohao Xu<sup>2*</sup>, Jinye Gan<sup>1</sup>, Fading Lu<sup>1</sup>, Xiang Li<sup>1</sup>, Na Ni<sup>1</sup>, Zheng Tian<sup>1</sup>, Shenghua Gao<sup>3</sup>, Yingna Wu<sup>1</sup></div>
+    <div class="h5 text-center" style="margin-bottom: 20px;"><sup>1</sup>ShanghaiTech University,  <sup>2</sup>University of Michigan, Ann Arbor,  <sup>3</sup>The University of Hong Kong </div>
+    
+    <div class="h1 text-center"  style="font-weight: bold;">Abstract</div>
+    <p style="font-size: 16px;">Object anomaly detection is essential for industrial quality inspection, yet traditional single-sensor methods face critical limitations. They fail to capture the wide range of anomaly types, as single sensors are often constrained to either external appearance, geometric structure, or internal properties. To overcome these challenges, we introduce MulSen-AD, the first high-resolution, multi-sensor anomaly detection dataset tailored for industrial applications. MulSen-AD unifies data from RGB cameras, laser scanners, and lock-in infrared thermography, effectively capturing external appearance, geometric deformations, and internal defects. The dataset spans 15 industrial products with diverse, real-world anomalies. We also present MulSen-AD Bench, a benchmark designed to evaluate multi-sensor methods, and propose MulSen-TripleAD, a decision-level fusion algorithm that integrates these three modalities for robust, unsupervised object anomaly detection. Our experiments demonstrate that multi-sensor fusion substantially outperforms single-sensor approaches, achieving 96.1% AUROC in object-level detection accuracy. These results highlight the importance of integrating multi-sensor data for comprehensive industrial anomaly detection. The dataset and code are publicly available  to support further research.
     </p>
 
 <!--    <p>-->
@@ -222,7 +224,7 @@
 </div>
 
 <div class="container my-4" id="Table" style="padding-top: 100px">
-    <h4 class="text-center h3" style="font-weight: bold;">MulsenAD Bench on Mulsen AD dataset(object-level AUROC)</h4>
+    <h4 class="text-center h3" style="font-weight: bold;">MulsenAD Bench on Mulsen AD dataset (object-level AUROC)</h4>
 <!--    <p class="text-center">The score indicates object-level AUROC &uarr;. PC means Point cloud. The best result of each category is highlighted in bold.</p>-->
     <div class="table-responsive">
         <table class="table h5">
@@ -231,178 +233,35 @@
                     <th rowspan="2" class="media-middle text-center">Category</th>
                     <th colspan="3" class="text-center">Single</th>
                     <th colspan="3" class="text-center">Double</th>
-                    <th rowspan="2" class="media-middle text-center">Triple</th>
+                    <th colspan="2" class="text-center">Triple</th>
                 </tr>
                 <tr>
                     <th class="text-center">RGB</th>
                     <th class="text-center">Infrared</th>
                     <th class="text-center">PC</th>
+                    <th class="text-center">RGB+PC</th>
+                    <th class="text-center">Infrared+PC</th>
                     <th class="text-center">RGB+Infrared</th>
-                    <th class="text-center">PC+RGB</th>
-                    <th class="text-center">PC+Infrared</th>
+                    <th class="text-center">RGB+Infrared+PC</th>
                 </tr>
             </thead>
             <tbody class="text-center">
-                <tr>
-                    <td>Capsule</td>
-                    <td>0.927</td>
-                    <td>0.754</td>
-                    <td>0.625</td>
-                    <td>0.923</td>
-                    <td>0.942</td>
-                    <td>0.775</td>
-                    <td class="highlight">0.958</td>
-                </tr>
-                <tr>
-                    <td>Cotton</td>
-                    <td>0.720</td>
-                    <td>0.818</td>
-                    <td>0.795</td>
-                    <td>0.830</td>
-                    <td>0.742</td>
-                    <td class="highlight">0.835</td>
-                    <td>0.762</td>
-                </tr>
-                <tr>
-                    <td>Cube</td>
-                    <td>0.947</td>
-                    <td>0.960</td>
-                    <td>0.338</td>
-                    <td class="highlight">0.978</td>
-                    <td>0.947</td>
-                    <td>0.949</td>
-                    <td class="highlight">0.978</td>
-                </tr>
-                <tr>
-                    <td>Spring pad</td>
-                    <td class="highlight">0.900</td>
-                    <td>0.542</td>
-                    <td>0.446</td>
-                    <td>0.575</td>
-                    <td>0.875</td>
-                    <td>0.538</td>
-                    <td>0.712</td>
-                </tr>
-                <tr>
-                    <td>Screw</td>
-                    <td>0.148</td>
-                    <td class="highlight">0.910</td>
-                    <td>0.465</td>
-                    <td>0.794</td>
-                    <td>0.152</td>
-                    <td>0.890</td>
-                    <td>0.639</td>
-                </tr>
-                <tr>
-                    <td>Screen</td>
-                    <td>0.412</td>
-                    <td>0.972</td>
-                    <td>0.612</td>
-                    <td>0.912</td>
-                    <td>0.444</td>
-                    <td class="highlight">0.984</td>
-                    <td>0.872</td>
-                </tr>
-                <tr>
-                    <td>Piggy</td>
-                    <td>0.980</td>
-                    <td>0.903</td>
-                    <td>0.537</td>
-                    <td>0.983</td>
-                    <td>0.980</td>
-                    <td>0.903</td>
-                    <td class="highlight">0.997</td>
-                </tr>
-                <tr>
-                    <td>Nut</td>
-                    <td class="highlight">0.814</td>
-                    <td>0.103</td>
-                    <td>0.483</td>
-                    <td>0.138</td>
-                    <td>0.790</td>
-                    <td>0.103</td>
-                    <td>0.252</td>
-                </tr>
-                <tr>
-                    <td>Flat pad</td>
-                    <td class="highlight">0.813</td>
-                    <td>0.417</td>
-                    <td>0.747</td>
-                    <td>0.543</td>
-                    <td class="highlight">0.813</td>
-                    <td>0.400</td>
-                    <td>0.610</td>
-                </tr>
-                <tr>
-                    <td>Plastic cylinder</td>
-                    <td>0.843</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.579</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.821</td>
-                    <td class="highlight">1.000</td>
-                    <td class="highlight">1.000</td>
-                </tr>
-                <tr>
-                    <td>Zipper</td>
-                    <td>0.637</td>
-                    <td>0.982</td>
-                    <td>0.595</td>
-                    <td>0.946</td>
-                    <td>0.699</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.943</td>
-                </tr>
-                <tr>
-                    <td>Button cell</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.797</td>
-                    <td>0.468</td>
-                    <td>0.923</td>
-                    <td class="highlight">1.000</td>
-                    <td>0.790</td>
-                    <td>0.971</td>
-                </tr>
-                <tr>
-                    <td>Tooth brush</td>
-                    <td>0.587</td>
-                    <td>0.852</td>
-                    <td>0.875</td>
-                    <td>0.852</td>
-                    <td>0.670</td>
-                    <td class="highlight">0.898</td>
-                    <td>0.822</td>
-                </tr>
-                <tr>
-                    <td>Solar panel</td>
-                    <td>0.528</td>
-                    <td class="highlight">0.923</td>
-                    <td>0.374</td>
-                    <td>0.821</td>
-                    <td>0.482</td>
-                    <td>0.877</td>
-                    <td>0.836</td>
-                </tr>
-                <tr>
-                    <td>Light</td>
-                    <td>0.814</td>
-                    <td class="highlight">0.839</td>
-                    <td>0.244</td>
-                    <td>0.814</td>
-                    <td>0.789</td>
-                    <td class="highlight">0.839</td>
-                    <td>0.808</td>
-                </tr>
-                <tr>
-                    <td class="font-weight-bold">Average</td>
-                    <td>0.738</td>
-                    <td>0.776</td>
-                    <td>0.546</td>
-                    <td>0.802</td>
-                    <td>0.743</td>
-                    <td>0.785</td>
-                    <td class="highlight">0.811</td>
-                </tr>
+            <tr><td>Capsule</td><td>0.952</td><td>0.896</td><td>0.817</td><td>0.952</td><td>0.898</td><td class="highlight">0.977</td><td>0.967</td></tr>
+            <tr><td>Cotton</td><td>0.868</td><td>0.922</td><td>0.835</td><td>0.883</td><td>0.938</td><td>0.958</td><td class="highlight">0.960</td></tr>
+            <tr><td>Cube</td><td>0.949</td><td>0.968</td><td>0.423</td><td>0.949</td><td>0.968</td><td>0.968</td><td class="highlight">0.980</td></tr>
+            <tr><td>Spring Pad</td><td>0.871</td><td>0.779</td><td>0.817</td><td class="highlight">0.904</td><td>0.792</td><td>0.817</td><td>0.879</td></tr>
+            <tr><td>Screw</td><td class="highlight">1.000</td><td>0.935</td><td>0.656</td><td class="highlight">1.000</td><td>0.948</td><td>0.974</td><td class="highlight">1.000</td></tr>
+            <tr><td>Screen</td><td>0.759</td><td class="highlight">0.991</td><td>0.756</td><td>0.781</td><td class="highlight">0.991</td><td>0.981</td><td>0.938</td></tr>
+            <tr><td>Piggy</td><td class="highlight">1.000</td><td>0.960</td><td>0.400</td><td class="highlight">1.000</td><td>0.960</td><td class="highlight">1.000</td><td class="highlight">1.000</td></tr>
+            <tr><td>Nut</td><td class="highlight">0.976</td><td>0.590</td><td>0.541</td><td>0.955</td><td>0.590</td><td>0.769</td><td>0.959</td></tr>
+            <tr><td>Flat pad</td><td>0.710</td><td class="highlight">0.950</td><td>0.830</td><td>0.780</td><td class="highlight">0.950</td><td>0.937</td><td>0.863</td></tr>
+            <tr><td>Plastic Cylinder</td><td>0.871</td><td class="highlight">1.000</td><td>0.600</td><td>0.871</td><td class="highlight">1.000</td><td class="highlight">1.000</td><td>0.993</td></tr>
+            <tr><td>Zipper</td><td>0.958</td><td>0.991</td><td>0.807</td><td>0.970</td><td class="highlight">0.994</td><td>0.988</td><td class="highlight">0.994</td></tr>
+            <tr><td>Button Cell</td><td class="highlight">1.000</td><td>0.826</td><td>0.813</td><td class="highlight">1.000</td><td>0.832</td><td>0.977</td><td class="highlight">1.000</td></tr>
+            <tr><td>Toothbrush</td><td>0.951</td><td>0.920</td><td>0.920</td><td class="highlight">0.966</td><td>0.924</td><td>0.939</td><td>0.955</td></tr>
+            <tr><td>Solar Panel</td><td>0.826</td><td>0.941</td><td>0.400</td><td>0.803</td><td>0.933</td><td class="highlight">0.977</td><td>0.949</td></tr>
+            <tr><td>Light</td><td>0.967</td><td>0.969</td><td>0.403</td><td>0.969</td><td>0.969</td><td>0.961</td><td class="highlight">0.972</td></tr>
+            <tr><td><strong>Mean</strong></td><td>0.911</td><td>0.909</td><td>0.668</td><td>0.919</td><td>0.912</td><td>0.948</td><td class="highlight">0.961</td></tr>
             </tbody>
         </table>
     </div>
